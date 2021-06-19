@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departure_point: MyString
+  arrival_point: MyString
+  way_point1: MyString
+  way_point2: MyString
+  way_point3: MyString
+  way_point4: MyString
+  way_point5: MyString
+  way_point6: MyString
+  way_point7: MyString
+  way_point8: MyString
+  date: 1
+
+two:
+  departure_point: MyString
+  arrival_point: MyString
+  way_point1: MyString
+  way_point2: MyString
+  way_point3: MyString
+  way_point4: MyString
+  way_point5: MyString
+  way_point6: MyString
+  way_point7: MyString
+  way_point8: MyString
+  date: 1
