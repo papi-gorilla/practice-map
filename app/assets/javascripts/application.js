@@ -33,21 +33,20 @@ function initMap(){
 
   // 経路の表示
   document.getElementById("route-btn").onclick = function search(){
-    const wayptslist = document.getElementById("waypoint-list");
-    const waypts = wayptslist.childNodes;
-    waypoints = [];
+    const departure = document.getElementById("departure").value;
+    const arrival = document.getElementById("arrival").value;
 
-    const from = document.getElementById("departure").value;
-    const to = document.getElementById("arrival").value;
+    const waypoint = document.getElementsByClassName("waypoint")
+    waypointlist = [];
 
-    for (var i = 0; i<waypts.length; i++){
-      waypoints.push({location: waypts[i].value, stopover: true});
+    for (var i = 0; i<waypoint.length; i++){
+      waypointlist.push({location: waypoint[i].value, stopover: true});
     };
 
     const request = {
-      origin: from,
-      destination: to,
-      waypoints: waypoints,
+      origin: departure,
+      destination: arrival,
+      waypoints: waypointlist,
       travelMode: google.maps.TravelMode.DRIVING
     };
 
@@ -58,17 +57,11 @@ function initMap(){
 };
 
 // 経由地の追加
-var i = 1;
+var j = 1;
 function addForm(){
-  if (i < 9){
-    const input_data = document.createElement("input");
-    input_data.type = "text";
-    input_data.id = "inputform_"+ i;
-    const parent = document.getElementById("waypoint-list");
-    parent.appendChild(input_data);
-    i++ ;
+  if (j < 9){
+    $('#way-point-' + j).removeClass('d-none');
+    $('#way-point-' + j).addClass('waypoint');
+    j++ ;
   };
 }
-
-
-
